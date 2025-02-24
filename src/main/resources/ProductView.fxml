@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.stock.ProductController">
+    <top>
+        <VBox>
+            <!-- Barra de herramientas con botones directos -->
+            <ToolBar>
+                <Button text="Ver Productos" onAction="#handleViewProducts"/>
+                <Button text="Agregar Producto" onAction="#handleAddProductView"/>
+            </ToolBar>
+            <!-- Etiqueta para mostrar errores de forma no intrusiva -->
+            <Label fx:id="errorLabel" textFill="red" visible="false"/>
+        </VBox>
+    </top>
+    <center>
+        <StackPane fx:id="centerPane">
+            <!-- Vista para mostrar productos en formato de tabla -->
+            <VBox fx:id="viewProductsPane" spacing="10">
+                <Label text="Lista de Productos:"/>
+                <TableView fx:id="productTableView" prefHeight="200" prefWidth="600">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="Nombre" prefWidth="200"/>
+                        <TableColumn fx:id="quantityColumn" text="Cantidad" prefWidth="150"/>
+                        <TableColumn fx:id="priceColumn" text="Precio" prefWidth="150"/>
+                        <TableColumn fx:id="actionColumn" text="Acciones" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+
+            <!-- Vista para agregar productos -->
+            <VBox fx:id="addProductPane" spacing="10" visible="false">
+                <Label text="Agregar Producto:"/>
+                <HBox spacing="10">
+                    <Label text="Nombre:"/>
+                    <TextField fx:id="nameField" promptText="Nombre del producto"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Cantidad:"/>
+                    <TextField fx:id="quantityField" promptText="Cantidad"/>
+                </HBox>
+                <HBox spacing="10">
+                    <Label text="Precio:"/>
+                    <TextField fx:id="priceField" promptText="Precio"/>
+                </HBox>
+                <Button text="Agregar" onAction="#addProduct"/>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
