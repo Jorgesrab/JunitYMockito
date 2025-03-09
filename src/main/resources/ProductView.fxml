@@ -19,7 +19,7 @@
                 <Button text="Ver Productos" onAction="#handleViewProducts"/>
                 <Button text="Agregar Producto" onAction="#handleAddProductView"/>
             </ToolBar>
-            <!-- Etiqueta para mostrar errores de forma no intrusiva -->
+            <!-- Etiqueta para mostrar errores -->
             <Label fx:id="errorLabel" textFill="red" visible="false"/>
         </VBox>
     </top>

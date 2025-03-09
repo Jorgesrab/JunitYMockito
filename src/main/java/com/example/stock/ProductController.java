@@ -14,35 +14,35 @@ import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 
 public class ProductController {
-    private ProductService productService = new ProductService();
+    ProductService productService = new ProductService();
 
     // Elementos para la vista de errores y tabla
     @FXML
-    private Label errorLabel;
+    public Label errorLabel;
     @FXML
-    private TableView<Product> productTableView;
+    public TableView<Product> productTableView;
     @FXML
-    private TableColumn<Product, String> nameColumn;
+    public TableColumn<Product, String> nameColumn;
     @FXML
-    private TableColumn<Product, Integer> quantityColumn;
+    public TableColumn<Product, Integer> quantityColumn;
     @FXML
-    private TableColumn<Product, Double> priceColumn;
+    public TableColumn<Product, Double> priceColumn;
     @FXML
-    private TableColumn<Product, Void> actionColumn;  // Columna para botón de eliminar
+    public TableColumn<Product, Void> actionColumn;  // Columna para botón de eliminar
 
     // Elementos del formulario para agregar producto
     @FXML
-    private TextField nameField;
+    public TextField nameField;
     @FXML
-    private TextField quantityField;
+    public TextField quantityField;
     @FXML
-    private TextField priceField;
+    public TextField priceField;
 
     // Paneles de vista
     @FXML
-    private VBox viewProductsPane;
+    public VBox viewProductsPane;
     @FXML
-    private VBox addProductPane;
+    public VBox addProductPane;
 
     @FXML
     public void initialize() {
